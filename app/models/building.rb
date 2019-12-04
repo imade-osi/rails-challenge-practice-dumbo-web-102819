@@ -1,6 +1,8 @@
 class Building < ApplicationRecord
+    has_many :offices, dependent: :destroy
+    has_many :companies, through: :offices
 
-  def number_of_floors_available
+    def number_of_floors_available
     # Will not work until relationships and schema are corretly setup
 
     all_floors = Array(1..self.number_of_floors)

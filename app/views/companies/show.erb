@@ -1,0 +1,25 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body class="show">
+    
+
+<h1 class="show">Details for Company:  <%= @company.name %> </h1>
+
+<br>
+<p >Office Locations:</p >
+<ul>
+    <% @company.buildings.each do |building| %>
+    
+    <% end %>
+</ul>
+
+<br>
+<%= link_to "Update Company Info!", edit_company_path %>
+<br>
+<%= link_to "Back to Company Index!", companies_path %> 
+
+</body>
+</html>

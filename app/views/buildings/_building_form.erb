@@ -1,0 +1,18 @@
+
+<%= form_for @building do |f| %>
+
+<%= f.label "Building Name:" %>
+<%= f.text_field :name %>
+<%= f.label "Building Country:" %>
+<%= f.text_field :country %> 
+<%= f.label "Building Address:" %> 
+<%= f.text_field :address %>
+<%= f.label "Rent Per Floor:" %>
+<%= f.number_field :rent_per_floor %> 
+<%= f.label "Number of Floors:" %> 
+<%= f.number_field :number_of_floors %> 
+<br>
+<br>
+<%= f.submit %> 
+
+<% end %>

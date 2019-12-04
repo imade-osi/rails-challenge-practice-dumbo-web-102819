@@ -1,0 +1,32 @@
+<section class="hero is-primary">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+       Company Index
+      </h1>
+      <h2 class="subtitle">
+        Primary subtitle
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+
+<div class="flex-container">
+  <% @companies.each do |company| %>
+<div class="card">
+  <img src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar" style="width:60%">
+  <div class="container">
+    <%= link_to company.name, company %>
+    <p>Architect & Engineer</p>
+  </div>
+  
+</div>
+
+    <% end %>
+</div>
+   
+
+
+<%= link_to "Create New Company!", new_company_path %>

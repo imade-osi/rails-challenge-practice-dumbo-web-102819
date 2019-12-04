@@ -1,0 +1,17 @@
+<body class="building">
+<h1> Details for Building: <font color = "blue"> <%= @building.name %> </font></h1>
+
+<ul>
+<br>
+    <li> Total Rent for Building: $<%= @building.rent_per_floor %></li> 
+    <li> Offices Located on Floors: <%= @building.offices.map(&:floor) %> </li>
+</ul>
+
+
+<br>
+<%= link_to "Update Building!", edit_building_path %>
+<br>
+<%= link_to "Delete Building!", building_path(@building), method: :delete, data: { confirm: "Are you sure?" } %>
+<br>
+<%= link_to "Back to Building Index!", buildings_path %> 
+</body>

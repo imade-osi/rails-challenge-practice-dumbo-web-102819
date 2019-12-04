@@ -1,19 +1,10 @@
-<%= form_for @company do |f| %>
-	<ul>
-		<% if @company.errors.any? %>
-			<%= @company.errors.full_messages.each do |msg| %>
-				<li><%= msg %></li>
-			<% end %>
-		<% end %>
-	</ul>
+<h1>Create a New Company </h1>
 
-<h1>Company Details</h1>
-	<%= f.label :name %>
-	<%= f.text_field :name %>
+<%= form_for @company do |f| %>
+
 <br>
-<br>
-<p>Building Floors Available:</p>
-	<% Building.all.each do |b| %>
+<p>Buildings and Floors Available to Purchase:</p>
+	<% @company.buildings.all.each do |b| %>
 		<%= f.fields_for :offices, b do |b_field| %>
 			<div>
 			<%= b_field.hidden_field :id %>
@@ -28,3 +19,4 @@
 
 	<%= f.submit %>
 <% end %>
+

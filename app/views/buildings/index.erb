@@ -1,0 +1,17 @@
+<body class="building">
+<h1>Building Index</h1>
+
+<ul>
+    <% @buildings.each do |building| %>
+<div>
+<br>
+  <li> 
+       Building Name: <%= link_to building.name, building %> </li> 
+       Available Floors: <%= building.number_of_floors_available%>  
+    <% end %>
+</div>
+</ul>
+
+
+<%= link_to 'Create New Building!', new_building_path %>
+</body>
